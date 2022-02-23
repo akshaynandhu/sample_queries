@@ -57,7 +57,7 @@ class Home extends StatelessWidget {
         ),
       ),
       extendBody: true,
-
+      bottomNavigationBar: Bottom(),
     );
   }
 }
