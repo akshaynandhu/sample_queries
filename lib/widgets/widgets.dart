@@ -22,69 +22,64 @@ Widget listView() {
             ],
           );
         } else {
-          return SizedBox(
-            height: MediaQuery.of(context).size.height.h,
-            width: double.infinity,
-            child: Padding(
-              padding: const EdgeInsets.only(left: 18),
-              child: ListView.separated(
-                primary: true,
-                physics: const ScrollPhysics(),
-                itemCount: snapshot.data!.length,
-                itemBuilder: (BuildContext context, index) {
-                  return Container(
-                    width: 150.w,
-                    height: 150.h,
-                    child: Card(
-                      elevation: 5,
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10)),
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Stack(
-                          children: [
-                            Text(
-                              snapshot.data![index].queryText.toString(),
-                              style: const TextStyle(
-                                fontWeight: FontWeight.bold,
-                              ),
+          return Flexible(
+            child: ListView.separated(
+              shrinkWrap: true,
+              physics: const ScrollPhysics(),
+              itemCount: snapshot.data!.length,
+              itemBuilder: (BuildContext context, index) {
+                return Container(
+                  width: 150.w,
+                  height: 150.h,
+                  child: Card(
+                    elevation: 5,
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10)),
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Stack(
+                        children: [
+                          Text(
+                            snapshot.data![index].queryText.toString(),
+                            style:  TextStyle(
+                              fontWeight: FontWeight.bold,color: Colors.grey[700]
                             ),
-                            Positioned(
-                              child: Row(
-                                children: [
-                                  const Icon(
-                                    CupertinoIcons.chat_bubble_text,
-                                    color: Colors.grey,
-                                  ),
-                                  SizedBox(
-                                    width: 5.w,
-                                  ),
-                                  Text(
-                                    snapshot.data![index].comments.toString(),
-                                    style: const TextStyle(
-                                        fontWeight: FontWeight.bold),
-                                  ),
-                                ],
-                              ),
-                              bottom: 0,
+                          ),
+                          Positioned(
+                            child: Row(
+                              children: [
+                                const Icon(
+                                  CupertinoIcons.chat_bubble_text,
+                                  color: Colors.grey,
+                                ),
+                                SizedBox(
+                                  width: 5.w,
+                                ),
+                                Text(
+                                  snapshot.data![index].comments.toString(),
+                                  style: const TextStyle(
+                                      fontWeight: FontWeight.bold),
+                                ),
+                              ],
                             ),
-                            Positioned(
-                              child: Text(
-                                snapshot.data![index].date.toString(),
-                                style: const TextStyle(color: Colors.grey),
-                              ),
-                              bottom: 0,
-                              right: 0,
+                            bottom: 0,
+                          ),
+                          Positioned(
+                            child: Text(
+                              snapshot.data![index].date.toString(),
+                              style: const TextStyle(color: Colors.grey),
                             ),
-                          ],
-                        ),
+                            bottom: 0,
+                            right: 0,
+                          ),
+                        ],
                       ),
                     ),
-                  );
-                },
-                separatorBuilder: (context, index) => SizedBox(
-                  height: 10.h,
-                ),
+                  ),
+                );
+              },
+              separatorBuilder: (context, index) => SizedBox(
+                height: 10.h,
               ),
             ),
           );
@@ -118,20 +113,7 @@ class Bottom extends StatelessWidget {
         children: [
 
           Positioned(
-            bottom: 40,
-            right: 70,
-            left: 70,
-            child: FloatingActionButton(
-              backgroundColor: Colors.grey[700],
-              onPressed: (){
-
-              },
-              child: Icon(Icons.add),
-            ),
-          ),
-
-          Positioned(
-            bottom: 20,
+            bottom: 10,
             right: 70,
             left: 70,
             child: Container(
@@ -153,6 +135,17 @@ class Bottom extends StatelessWidget {
               ),
             ),
           ),
+
+          Center(
+            child: FloatingActionButton(
+              backgroundColor: Colors.grey[700],
+              onPressed: (){
+
+              },
+              child: Icon(Icons.add),
+            ),
+          ),
+
         ],
       ),
     );

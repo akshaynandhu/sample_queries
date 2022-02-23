@@ -37,7 +37,7 @@ class _LottieSplashState extends State<LottieSplash> {
               lineHeight: 15.h,
               percent: 100/100,
               animation: true,
-              animationDuration: 2200,
+              animationDuration: 2100,
               progressColor: Colors.redAccent,
             ),
           ),
