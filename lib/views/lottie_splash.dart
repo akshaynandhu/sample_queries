@@ -34,7 +34,7 @@ class _LottieSplashState extends State<LottieSplash> {
             child: LinearPercentIndicator(
               barRadius: Radius.circular(10.r),
               width: 250.w,
-              lineHeight: 15,
+              lineHeight: 15.h,
               percent: 100/100,
               animation: true,
               animationDuration: 2200,

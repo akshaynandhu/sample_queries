@@ -1,5 +1,3 @@
-
-
 import 'dart:convert';
 
 List<Feed> feedFromJson(String str) => List<Feed>.from(json.decode(str).map((x) => Feed.fromJson(x)));

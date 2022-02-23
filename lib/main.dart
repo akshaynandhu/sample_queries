@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
-import 'package:sample_queries/views/home.dart';
+import 'package:sample_queries/controller/getx_controller.dart';
 import 'package:sample_queries/views/lottie_splash.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  Get.put(HomeController());
   runApp(const MyApp());
 }
 

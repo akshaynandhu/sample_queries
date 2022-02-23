@@ -12,12 +12,19 @@ class Home extends StatelessWidget {
       appBar: AppBar(
         shadowColor: Colors.white.withOpacity(0.05),
         backgroundColor: Colors.white.withOpacity(0.05),
-        leading: Icon(CupertinoIcons.person,color: Colors.black.withOpacity(0.6),),
+        leading: Icon(
+          CupertinoIcons.person,
+          color: Colors.black.withOpacity(0.6),
+        ),
         actions: [
-          Image.asset('assets/images/settings.png',width: 20.w,height: 20.h),
-          SizedBox(width: 15.w,),
-          Image.asset('assets/images/search.png',width: 20.w,height: 20.h),
-          SizedBox(width: 20.w,)
+          Image.asset('assets/images/settings.png', width: 20.w, height: 20.h),
+          SizedBox(
+            width: 15.w,
+          ),
+          Image.asset('assets/images/search.png', width: 20.w, height: 20.h),
+          SizedBox(
+            width: 20.w,
+          )
         ],
       ),
       body: Padding(
@@ -25,22 +32,32 @@ class Home extends StatelessWidget {
         child: SingleChildScrollView(
           child: Column(
             children: [
+
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  Text('My Queries',style: TextStyle(fontSize: 30.sp,fontWeight: FontWeight.bold,color: Colors.grey[700]),),
+                  Text(
+                    'My Queries',
+                    style: TextStyle(
+                        fontSize: 30.sp,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.grey[700]),
+                  ),
                 ],
               ),
-              SizedBox(height: 20.h,),
+
               SizedBox(
-                height: MediaQuery.of(context).size.height.h,
-                  width: MediaQuery.of(context).size.width.w,
-                  child: listView())
+                height: 20.h,
+              ),
+
+              listView(),
+
             ],
           ),
         ),
       ),
       extendBody: true,
+
     );
   }
 }
